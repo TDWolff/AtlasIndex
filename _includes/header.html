@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+      .site-header ul {
+          list-style: none;
+          padding: 0;
+          display: flex;
+          justify-content: space-between;
+      }
+  
+      .site-header ul li {
+          margin-right: 20px;
+      }
+  
+      .site-header ul li:first-child {
+          margin-right: auto;
+      }
+  
+      .nart-movies {
+          font-weight: bold; /* Optionally, make the text bold */
+      }
+      .navbarclass {
+          width: 1000px;
+      }
+  </style>
+</head>
+<body>
+    <header class="site-header">
+      <div id="header">
+        <nav class="navbarclass">
+          <ul>
+            <li class="nart-movies">NART Movies</li>
+            <li class="fork"><a href="{{site.baseurl}}/">Movies</a></li>
+            <!-- <li class="fork"><a href="{{site.baseurl}}/compsci">CompSci</a></li> -->
+            <li class="fork"><a href="{{site.baseurl}}/moviedb">Movie Search</a></li>
+            <li class="title"><a href="{{site.baseurl}}/signin">Sign In</a></li>
+            <li class="title"><a href="{{site.baseurl}}/recommendations">Recommendations</a></li>
+            <li class="title"><a href="{{site.baseurl}}/help">Help</a></li>
+            <!--<li class="title"><a href="{{ site.github.repository_url }}#readme">View On GitHub</a></li>-->
+          </ul>
+        </nav>
+      </div><!-- end header -->
+    </header>
+</body>
+<!-- <p style="text-align:left; font-family: Arial">NART Movies</p> -->
