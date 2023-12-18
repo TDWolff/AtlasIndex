@@ -10,9 +10,7 @@ title: Student Blog
 <head>
     <style>
         body {
-            background-image: url('images/webbackground.png');
-            background-size: cover;
-            overscroll-behavior: none;
+            background: #ffffff;
         }
     </style>
   <link rel="stylesheet" type="text/css" href="styles.css">
