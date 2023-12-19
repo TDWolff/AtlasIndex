@@ -15,7 +15,7 @@ title: Student Blog
             color: #000000;
         }
     </style>
-    <link id="theme-style" rel="stylesheet" type="text/css" href="assets/css/styles.css">
+    <link id="theme-style" rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body class="lightmode">
     <p>Home Page</p>
