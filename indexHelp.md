@@ -1,6 +1,6 @@
 ---
 layout: help
-permalink: /help
+permalink: /indexHelp.md
 title: Help
 ---
 <style>
