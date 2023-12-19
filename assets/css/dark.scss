@@ -1,0 +1,306 @@
+---
+---
+
+  @import "{{ site.theme }}";
+
+// STYLING PREFERENCES for SITE
+// mixin used as a template for buttons
+@mixin button {
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+    background-color: #444444; // Darker background color
+    border: 3px solid #ffffff; // Light border for contrast
+    color: #ffffff; // Light text color for contrast
+    font-size: 1.5em;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    grid-column: span 1;
+    grid-row: span 1;
+  
+    // Creates smooth animation effect
+    transition: all 0.5s;
+  }
+  
+  /* define class for redefined button */
+  .button {
+    @include button;
+  }
+  
+  /* darkens the background color on hover to create a selecting effect */
+  .button:hover {
+    background-color: #333333; // Even darker background color on hover
+  }
+  
+  /* "row style" is flexible size and aligns pictures in center */
+  .row {
+    align-items: center;
+    background-color: #222222; // Dark background color for rows
+  }
+  
+  /* "column style" is one-third of the width with padding */
+  .column {
+    flex: 16.66%;
+    padding: 3px;
+    background-color: #222222; // Dark background color for columns
+  }
+
+// STYLING FOR CALCULATOR
+/* class to create the calculator's container; uses CSS grid dsiplay to partition off buttons */
+.calculator-container {
+  width: 90vw; /* this width and height is specified for mobile devices by default */
+  height: 80vh;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* fr is a special unit; learn more here: https://css-tricks.com/introduction-fr-css-unit/  */
+  grid-template-rows: 0.5fr repeat(4, 1fr);
+  gap: 10px 10px;
+}
+
+@media (min-width: 600px) {
+    .calculator-container {
+      width: 40vw;
+      height: 80vh;
+    }
+  }
+  
+  /* styling for the calculator number button */
+  .calculator-number {
+    @extend .button;
+  }
+  
+  /* styling for the calculator operation button */
+  .calculator-operation {
+    @extend .button;
+  }
+  
+  /* styling for the calculator clear button */
+  .calculator-clear {
+    @extend .button;
+    background-color: #e68b1c; // Adjust this color for dark mode if needed
+  }
+  
+  /* styling for the calculator equals button */
+  .calculator-equals {
+    @extend .button;
+    background-color: #e70f0f; // Adjust this color for dark mode if needed
+  }
+  
+  #header {
+    z-index: 100;
+    left: 0;
+    top: 0px;
+    height: 60px;
+    width: 100%;
+    position: static;
+    background: #333333; // Darker background color
+    border-bottom: 4px solid #ffffff; // Light border for contrast
+    box-shadow: 0px 1px 3px #ffffff; // Light shadow for contrast
+  
+    nav {
+      background: #333333; // Darker background color
+      width: 100%;
+      margin-left: 1%;
+  
+      ul {
+        list-style-type: none;
+        padding: 0;
+        width: 100%;
+  
+        li {
+          font-family: 'OpenSansLight', "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-weight: normal;
+          list-style: none;
+          display: inline;
+          color: #ffffff; // Lighter text color for contrast
+          line-height: 50px;
+          text-shadow: 0px 1px 0px #333333; // Darker shadow for contrast
+          font-size: 14px;
+  
+          a {
+            color: #ffffff; // Lighter text color for contrast
+            border: 0px solid #ffffff; // Light border for contrast
+            background: #444444; // Darker background color
+            border-radius: 2px;
+            padding: 10px 12px;
+            margin-top: 6px;
+            line-height: 14px;
+            font-size: 14px;
+            display: inline-block;
+            text-align: center;
+  
+            &:hover {
+              background: #555555; // Even darker background color on hover
+              border: 1px solid #ffffff; // Light border for contrast
+            }
+          }
+
+          p {
+            color: #ffffff; // Brighter text color for contrast
+            font-family: 'OpenSansLight', "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-weight: normal;
+            font-size: 18px;
+            text-align: center;
+          }
+  
+          &.fork {
+            float: left;
+            margin-left: 0px;
+          }
+  
+          &.downloads {
+            float: right;
+            margin-left: 6px;
+          }
+  
+          &.title {
+            float: right;
+            margin-right: 10px;
+            font-size: 11px;
+            color: #ffffff; // Lighter text color for contrast
+          }
+        }
+      }
+    }
+  }
+
+
+  // * Jekyll-theme-midnight.scss conversion. * //
+  @import "normalize";
+@import "fonts";
+@import "rouge-base16-dark.scss";
+
+body {
+    padding:0px 0 20px 0px;
+    margin: 0px;
+    font:14px/1.5 "Hussar", "Hussar", "Hussar", "Hussar Bold", "Hussar";
+    color:#ffffff; // Brighter text color for contrast
+    font-weight: normal;
+    background: #111111; // Darker background color
+    background-attachment: fixed !important;
+    background: linear-gradient(#1a1a1a, #0c0c0c); // Darker gradient background
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color:#ffffff; // Brighter text color for contrast
+    margin:0 0 10px;
+    font-family:"Hussar", "Hussar", "Hussar", "Hussar Bold", "Hussar";
+    font-weight: normal;
+  }
+  
+  p, ul, ol, table, pre, dl {
+    margin:0 0 20px;
+  }
+  
+  a {
+    color:#ffcc00; // This color is already bright, so it's kept the same
+    font-weight:400;
+    text-decoration:none;
+  
+    &:hover {
+      color: #ffeb9b; // This color is already bright, so it's kept the same
+    }
+  }
+  
+  .wrapper {
+    max-width:100%;
+    margin:0 auto;
+    position:relative;
+    padding: 0 20px;
+  }
+  
+  pre {
+    padding:8px 15px;
+    background: #0f0f0f; // Darker background color
+    border-radius: 2px;
+    border:1px solid #0a0a0a; // Darker border color
+    box-shadow: inset 0 1px 3px rgba(0,0,0,.3);
+    overflow: auto;
+    overflow-y: hidden;
+  
+    code {
+      color: #ffffff; // Brighter text color for contrast
+      text-shadow: 0px 1px 0px #000;
+      margin: 0;
+      padding: 0;
+    }
+  }
+  
+  table {
+    width:100%;
+    border-collapse:collapse;
+  }
+  
+  th {
+    text-align:left;
+    padding:5px 10px;
+    border-bottom:1px solid #333333; // Darker border color
+    color: #ffffff; // Brighter text color for contrast
+    font-family: 'OpenSansSemibold', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    font-weight: normal;
+  }
+  
+  td {
+    text-align:left;
+    padding:5px 10px;
+    border-bottom:1px solid #333333; // Darker border color
+  }
+  
+  hr {
+    border: 0;
+    outline: none;
+    height: 3px;
+    background: transparent url('../images/hr.gif') center center repeat-x;
+    margin: 0 0 20px;
+  }
+
+  dt {
+    color: #ffffff; // Brighter text color for contrast
+    font-family: 'OpenSansSemibold', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    font-weight: normal;
+  }
+  
+  section {
+    max-width: 650px;
+    padding: 30px 0px 50px 0px;
+    margin: 20px 0;
+    margin-top: 70px;
+    background-color: #333333; // Darker background color
+  
+    #title {
+      border: 0;
+      outline: none;
+      margin: 0 0 50px 0;
+      padding: 0 0 5px 0;
+  
+      h1 {
+        font-family: 'OpenSansLight', "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: normal;
+        font-size: 40px;
+        text-align: center;
+        line-height: 36px;
+        color: #ffffff; // Brighter text color for contrast
+      }
+
+  
+      .credits {
+        font-size: 11px;
+        font-family: 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: normal;
+        color: #aaaaaa; // Lighter text color for contrast
+        margin-top: -10px;
+  
+        &.left {
+          float: left;
+        }
+  
+        &.right {
+          float: right;
+        }
+      }
+    }
+  }
