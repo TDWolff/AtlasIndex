@@ -31,7 +31,7 @@ title: Search
             body.classList.remove('lightmode');
             body.classList.add('darkmode');
         } else {
-            themeStyle.href = "assets/css/styles.css";
+            themeStyle.href = "assets/css/style.css";
             body.classList.remove('darkmode');
             body.classList.add('lightmode');
         }

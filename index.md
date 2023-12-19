@@ -33,7 +33,7 @@ title: Student Blog
             body.classList.add('darkmode');
             localStorage.setItem('theme', 'dark');
         } else {
-            themeStyle.href = "assets/css/styles.css";
+            themeStyle.href = "assets/css/style.css";
             body.classList.remove('darkmode');
             body.classList.add('lightmode');
             localStorage.setItem('theme', 'light');
@@ -48,7 +48,7 @@ title: Student Blog
             body.classList.remove('lightmode');
             body.classList.add('darkmode');
         } else {
-            themeStyle.href = "assets/css/styles.css";
+            themeStyle.href = "assets/css/style.css";
             body.classList.remove('darkmode');
             body.classList.add('lightmode');
         }
