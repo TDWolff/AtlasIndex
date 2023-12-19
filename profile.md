@@ -1,6 +1,6 @@
 ---
-permalink: /recommendations
-title: Movie Recommendation System
+permalink: /discover
+title: Discover
 ---
 
 <!-- Start of HTML Document -->
