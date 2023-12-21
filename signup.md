@@ -1,9 +1,12 @@
 ---
-layout: help
-permalink: /help
-title: Help
+permalink: /signup
+title: Sign Up
 ---
-<html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign-In/Register and CSV Data</title>
 <style>
         .darkmode {
             background: #252525;
@@ -13,10 +16,11 @@ title: Help
             background: #ffffff;
             color: #000000;
         }
-</style>
-<link id="theme-style" rel="stylesheet" type="text/css" href="assets/css/style.css">
+    </style>
+    <link id="theme-style" rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
 <body class="lightmode">
-    <p>Help Area</p>
+    <p>Sign up Area</p>
 </body>
 <script>
     var darkMode = false;
