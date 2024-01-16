@@ -1,7 +1,6 @@
 ---
 layout: help
 permalink: /help
-title: Help
 ---
 <html>
 <style>
