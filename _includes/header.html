@@ -42,10 +42,13 @@
             <li class="fork"><a href="{{site.baseurl}}/">Home</a></li>
             <!-- <li class="fork"><a href="{{site.baseurl}}/compsci">CompSci</a></li> -->
             <li class="fork"><a href="{{site.baseurl}}/search"> Search</a></li>
-            <li class="title", id="signin"><a href="{{site.baseurl}}/signin">Sign In</a></li>
-            <li class="title", id="profile"><a href="{{site.baseurl}}/signup">Sign Up</a></li>
             <li class="title"><a href="{{site.baseurl}}/discover">Discover</a></li>
+            <li class="title", id="profile"><a href="{{site.baseurl}}/profile">Profile</a></li>
             <li class="title"><a href="{{site.baseurl}}/help">Help</a></li>
+            <li class="title", id="signin"><a href="{{site.baseurl}}/signin">Sign In</a></li>
+            <li class="title", id="signout"><a href="{{site.baseurl}}/logout">Logout</a></li>
+            <li class="title", id="signup"><a href="{{site.baseurl}}/signup">Sign Up</a></li>
+            <li class="title", id="display"><a href="{{site.baseurl}}/display">Users</a></li>
             <!--<li class="title"><a href="{{ site.github.repository_url }}#readme">View On GitHub</a></li>-->
           </ul>
         </nav>
@@ -53,15 +56,4 @@
       </div><!-- end header -->
     </header>
 </body>
-<script>
-  var signin = document.getElementById("signin");
-  var profile = document.getElementById("profile");
-  var user = localStorage.getItem("user");
-  if (user != null) {
-    signin.innerHTML = "Sign Out";
-    signin.href = "{{site.baseurl}}/signout";
-    profile.innerHTML = "Profile";
-    profile.href = "{{site.baseurl}}/profile";
-  }
-</script>
 <!-- <p style="text-align:left; font-family: Arial">NART Movies</p> -->

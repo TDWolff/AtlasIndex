@@ -8,6 +8,33 @@
   <!-- <div class="wrapper"> -->
     <header>
       {%- include header.html -%}
+      <script>
+        var signin = document.getElementById("signin");
+        var signout = document.getElementById("signout");
+        var signup = document.getElementById("signup");
+        var profile = document.getElementById("profile");
+        var display = document.getElementById("display");
+        setInterval(function() {
+            var uid = window.localStorage.getItem('uid');
+            if (uid != null) {
+                signin.style.display = "none";
+                signup.style.display = "none";
+                signout.style.display = "block";
+                profile.style.display = "block";
+            } else if (uid == null) {
+                signin.style.display = "block";
+                signup.style.display = "block";
+                signout.style.display = "none";
+                profile.style.display = "none";
+            }
+            if(uid == 'admin'){
+                display.style.display = "block";
+            } else {
+                display.style.display = "none";
+            }
+        }, 10); // 1000 milliseconds = 1 second
+    </script>
+    
     </header>
 
 
