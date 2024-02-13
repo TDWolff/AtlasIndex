@@ -51,10 +51,12 @@ title: Display Users
           const authrequestOptions = {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
+              credentials: 'include',
               body: JSON.stringify(userAuthBody)
           };
           const requestOptions = {
               method: 'GET',
+              credentials: 'include'
           };
           if (!userAuthBody) {
             console.log("User Authentication Failed");
@@ -64,6 +66,8 @@ title: Display Users
               .then(response => response.json())
               .then(data => {
                 console.log(data);
+                //if (data.error == "Unauthorized"){
+                //window.location.href = "http://localhost:8090/AtlasIndex/403";}
                 fetch(url, requestOptions)
                   .then(response => response.json())
                   .then(data => {

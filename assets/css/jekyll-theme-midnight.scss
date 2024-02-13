@@ -98,8 +98,8 @@ blockquote {
 }
 
 code {
-  font-family: Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, monospace;
-  color:#efefef;
+  font-family: 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  color:#363636;
   font-size:13px;
   margin: 0 4px;
   padding: 4px 6px;
@@ -116,8 +116,8 @@ pre {
   overflow-y: hidden;
 
   code {
-    color: #efefef;
-    text-shadow: 0px 1px 0px #000;
+    font-family: 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    color:#363636;
     margin: 0;
     padding: 0;
   }
@@ -141,14 +141,6 @@ td {
   text-align:left;
   padding:5px 10px;
   border-bottom:1px solid #434343;
-}
-
-hr {
-  border: 0;
-  outline: none;
-  height: 3px;
-  background: transparent url('../images/hr.gif') center center repeat-x;
-  margin: 0 0 20px;
 }
 
 dt {

@@ -1,11 +1,11 @@
 ---
 ---
 
-  @import "{{ site.theme }}";
+@import "{{ site.theme }}";
 
-  @import "normalize";
-  @import "fonts";
-  @import "rouge-base16-dark.scss";
+@import "normalize";
+@import "fonts";
+@import "rouge-base16-dark.scss";
 
 body {
   padding:0px 0 20px 0px;
@@ -16,6 +16,11 @@ body {
   background: #252525;
   background-attachment: fixed !important;
   background: linear-gradient(#2a2a29, #1c1c1c);
+}
+
+.stock-price {
+  font-size: 20px; /* Adjust the font size as needed */
+  color: #262626; /* Set the desired color */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -35,19 +40,21 @@ h1, h2, h3 {
   line-height:1.1;
   font-family: 'OpenSansLight', "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
-
+  color:rgb(71, 71, 71);
 }
 
 h1 {
   font-size:28px;
+  
 }
 
 h2 {
   font-size: 24px;
+  color:rgb(71, 71, 71);
 }
 
 h4, h5, h6 {
-  color:#e8e8e8;
+  color:#626262;
 }
 
 h3 {
@@ -55,16 +62,16 @@ h3 {
   line-height: 24px;
   font-family: 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   font-weight: normal;
-  color: #b6b6b6;
+  color:rgb(71, 71, 71);
 }
 
 a {
-  color:#ffcc00;
+  color:#144a00;
   font-weight:400;
   text-decoration:none;
 
   &:hover {
-    color: #ffeb9b;
+    color: #185800;
   }
 }
 
@@ -103,8 +110,8 @@ blockquote {
 }
 
 code {
-  font-family: Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, monospace;
-  color:#efefef;
+  font-family: 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  color:#363636;
   font-size:13px;
   margin: 0 4px;
   padding: 4px 6px;
@@ -113,16 +120,16 @@ code {
 
 pre {
   padding:8px 15px;
-  background: #191919;
+  background: #cbcbcb;
   border-radius: 2px;
-  border:1px solid #121212;
+  border:1px solid #3d3d3d;
   box-shadow: inset 0 1px 3px rgba(0,0,0,.3);
   overflow: auto;
   overflow-y: hidden;
 
   code {
-    color: #efefef;
-    text-shadow: 0px 1px 0px #000;
+    font-family: 'OpenSansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    color:#363636;
     margin: 0;
     padding: 0;
   }
@@ -157,7 +164,7 @@ hr {
 }
 
 dt {
-  color:#F0E7D5;
+  color:#423d34;
   font-family: 'OpenSansSemibold', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   font-weight: normal;
 }
@@ -192,7 +199,7 @@ dt {
         font-weight: normal;
         list-style: none;
         display: inline;
-        color: white;
+        color: rgb(71, 71, 71);
         line-height: 50px;
         text-shadow: 0px 1px 0px #ffffff;
         font-size: 14px;
@@ -240,6 +247,10 @@ dt {
   }
 }
 
+form {
+  margin-left: 30%;
+}
+
 section {
   max-width:650px;
   padding: 30px 0px 50px 0px;
@@ -247,6 +258,7 @@ section {
   margin-top: 70px;
   background-color: #fafafa;
   padding-left: 2%;
+  transform: translateX(50%);
 
   #title {
     border: 0;

@@ -38,7 +38,7 @@ title: Sign Up
             return ("Please fill out all fields and ensure the name is at least 2 characters long");
         }
         else{
-            if (pnum = '' || pnum == null) {
+            if (pnum == '' || pnum == null) {
                 pnum = "1234567890";
             }
             pnum = String(pnum);
@@ -63,7 +63,8 @@ title: Sign Up
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: json
+                body: json,
+                credentials: 'include'
             })
             .then(response => response.json())
             .then(data => {
@@ -81,7 +82,7 @@ title: Sign Up
             console.log(userBody);
             window.localStorage.setItem('userBody', userBody);
             console.log("User Auth Token Stored Successfully")
-            window.location.href = "/AtlasIndex/display";
+            window.location.href = "/AtlasIndex/";
         }
     }
 </script>

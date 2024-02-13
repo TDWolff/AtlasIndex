@@ -23,7 +23,7 @@ title: Sign In
             window.sign_in = function signin(){
                 const authurl = 'http://localhost:8086/api/users/authenticate';
                 const body = {
-                    name: document.getElementById('uid').value,
+                    name: document.getElementById('name').value,
                     uid: document.getElementById('uid').value,
                     password: document.getElementById('password').value
                 };
@@ -32,7 +32,8 @@ title: Sign In
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(body),
-                    cache: 'no-cache'
+                    cache: 'no-cache',
+                    credentials: 'include'
                 };
                 // Fetch the JWT
                 fetch(authurl, authOptions)
