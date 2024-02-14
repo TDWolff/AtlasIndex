@@ -42,7 +42,7 @@ title: Buy Atlas Crypto
                 .then(data=>{
                     alert(JSON.stringify(data));
                      });
-                     alert("Transaction Details");
+                     //alert("Transaction Details");
             }
             function displayTrx() {
                 const uid = window.localStorage.getItem('uid');
