@@ -55,9 +55,12 @@ title: Search
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ symbol: symbol })
+                body: JSON.stringify({ symbol: symbol.toLowerCase() })
             })
-            .then(response => response.json())
+            .then(response => {
+                console.log(response);
+                return response.json();
+            })
             .then(data => {
                 document.getElementById('result').innerHTML = 'Symbol: ' + data.symbol + ', Current Price: ' + data.current_price;
                 document.getElementById('stock-graph').src = data.graph;
