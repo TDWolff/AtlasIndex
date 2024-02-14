@@ -90,47 +90,51 @@ title: Display Stocks
                 //const quantity = row.querySelector('td:nth-child(3)').innerText;
                 const quantityToBuy = prompt(`How many stocks of ${symbol} do you wish to buy?`, '1');
                 const availableQuantity = quantity;
-                const url = 'http://127.0.0.1:8086/api/stocks/transaction'
                 // Check if the user clicked 'Cancel' or entered a valid quantity
                if (quantityToBuy !== null && !isNaN(quantityToBuy) && quantityToBuy > 0) {
                     // Check if the requested quantity is less than or equal to the available quantity
                     if (quantityToBuy <= availableQuantity) {
-            // User entered a valid and within the available quantity, proceed with the buy transaction
+                        // User entered a valid and within the available quantity, proceed with the buy transaction
                         alert(`Buying ${quantityToBuy} stocks of ${symbol}`);
+                        const url = 'http://localhost:8086/api/stocks/transaction'
                         const newquantity = availableQuantity - quantityToBuy;
                         uid = localStorage.getItem("uid");
+                        //consol.log(uid)
                         var data = {
-                            newquantity: newquantity,
-                            avaliablequantity: availableQuantity,
+                            buyquantity:Number(quantityToBuy),
                             symbol: symbol,
                             uid:uid,
-                            buyquantity:quantityToBuy
+                            newquantity: newquantity
+                            //avaliablequantity: availableQuantity,
                         }
+                        console.log(data)
                         var json = JSON.stringify(data)
-                        fetch(url, {
+                        console.log(json)
+                        const authOptions = {
                             method: 'POST',
-                            headers: {
-                                'content-Type': 'application/json'
-                            },
+                            headers: {'content-Type': 'application/json'},
                             body: json,
                             mode: 'no-cors',
+                            cache: 'no-cache',
                             credentials: 'include'
-                        })
-                        .then(responce => responce.json())
+                        }
+                        fetch(url, authOptions)
+                        .then(response => response.json())
                         .then(data => {
-                            consol.log('success')
-                            fetchData(data)
+                            console.log('success')
+                            //fetchData(data)
+                            //updateTable(data)
                         })
                         .catch((error) => {
                             console.error('eror')
                         })
-            // Additional logic for making the buy transaction can go here
+                        // Additional logic for making the buy transaction can go here
                     } else {
-            // User entered a quantity exceeding the available quantity
+                        // User entered a quantity exceeding the available quantity
                         alert('Invalid quantity. The requested quantity exceeds the available quantity.');
                     }
                 } else {
-        // User clicked 'Cancel' or entered an invalid quantity
+                    // User clicked 'Cancel' or entered an invalid quantity
                     alert('Buy operation canceled or invalid quantity entered.');
                 }
             }
