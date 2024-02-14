@@ -28,7 +28,7 @@ title: Buy Atlas Crypto
                     amount: document.getElementById('amount').value,
                     type: document.getElementById('buy_sell').value
                 };
-                alert(body);
+                //alert(body);
                 const authOptions = {
                     // ...options,
                     method: 'POST',
@@ -42,6 +42,7 @@ title: Buy Atlas Crypto
                 .then(data=>{
                     alert(JSON.stringify(data));
                      });
+                     alert("Transaction Details");
             }
             function displayTrx() {
                 const uid = window.localStorage.getItem('uid');

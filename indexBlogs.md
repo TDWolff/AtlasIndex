@@ -50,7 +50,7 @@ title: Search
         document.getElementById('stock-search-form').addEventListener('submit', function(event) {
             event.preventDefault();
             var symbol = document.getElementById('symbol').value;
-            fetch('http://localhost:8086/api/stock/search', {
+            fetch('http://localhost:/api/stock/search', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
