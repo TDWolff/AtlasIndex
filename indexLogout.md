@@ -28,6 +28,7 @@ title: Logout
         </div>
         <script>
             document.getElementById('logoutButton').addEventListener('click', function() {
+                document.cookie = 'jwt=; Max-Age=0; path=/; samesite=None; secure';
                 window.localStorage.removeItem('userBody');
                 window.localStorage.removeItem('uid');
                 window.location.href = "/AtlasIndex/";

@@ -22,7 +22,11 @@ title: Edit House
 </head>
 
 <body>
-  <h2 id = "houseHeader">Manage House</h2>  
+  <h2 id = "houseHeader">Manage House</h2>
+<label id="currbeds">Beds:</label><br>
+<label id="currbaths">Baths:</label><br>
+<label id="currprice">Price:</label><br>
+<label id="currsqfeet">Square Feet:</label><br>
   <form id="deleteForm">
     <p>Delete House</p>
     <button type="button" id="deleteButton">Delete</button>
@@ -74,20 +78,33 @@ title: Edit House
         });
     });
     document.getElementById('editButton').addEventListener('click', function () {
-      var url = 'http://localhost:8086/api/users/';
-      var authUrl = 'http://localhost:8086/api/users/authenticate';
-      var authBody = window.localStorage.getItem('userBody');
-      var uid = document.getElementById('editUid').value;
-      var pnum = document.getElementById('editPnum').value;
-       if (pnum == '' || pnum == null) {
-                pnum = "1234567890";
-            }
-            pnum = String(pnum);
-            // convert pnum to format 123-456-7890
-            pnum = pnum.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3');
+        var url = `http://localhost:8086/api/house/`
+        var authBody = window.localStorage.getItem('userBody');
+        const params = new URLSearchParams(window.location.search)
+        var address = params.get("address")
+        var price = document.getElementById('price').value;
+        var beds = document.getElementById('beds').value;
+        var baths = document.getElementById('baths').value;
+        var sqft = document.getElementById('sqfeet').value;
+
+        if(sqft == null){
+            sqft = '';
+        }
+        if(price == null){
+            price = '';
+        }
+        if(beds == null){
+            beds = '';
+        }
+        if(baths == null){
+            baths = '';
+        }
       var body = {
-        uid: uid,
-        pnum: pnum
+        address:address,
+        price:price,
+        beds:beds,
+        baths:baths,
+        sqft:sqft
       };
       var options = {
         method: 'PUT',
@@ -127,7 +144,15 @@ title: Edit House
     }
     var params = new URLSearchParams(window.location.search)
     var address = params.get("address")
+    var baths = params.get("baths")
+    var beds = params.get("beds")
+    var price = params.get("price")
+    var sqfeet = params.get("sqfeet")
     document.getElementById('houseHeader').textContent = "Manage " + address;
+    document.getElementById('currbaths').textContent = "Current Baths: " + baths;
+    document.getElementById('currbeds').textContent = "Current Beds: " + beds;
+    document.getElementById('currprice').textContent = "Current Price: " + price;
+    document.getElementById('currsqfeet').textContent = "Current Square Feet: " + sqfeet;
   </script>
 </body>
 

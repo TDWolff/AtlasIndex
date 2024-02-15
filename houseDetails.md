@@ -207,9 +207,14 @@ permalink: /house-details
             fetchHouseDetails();
         }
         document.getElementById('editHouseButton').addEventListener('click', function() {
-        const params = new URLSearchParams(window.location.search)
-        window.location.href = `edit-house?address=${encodeURIComponent(params.get('address'))}`;
-    });
+        var params = new URLSearchParams(window.location.search)
+        var address = encodeURIComponent(params.get('address'));
+        var price = encodeURIComponent(document.getElementById('price').textContent);
+        var beds = encodeURIComponent(document.getElementById('beds').textContent);
+        var baths = encodeURIComponent(document.getElementById('baths').textContent);
+        var sqfeet = encodeURIComponent(document.getElementById('sqfeet').textContent);
+        window.location.href = `edit-house?address=${address}&price=${price}&beds=${beds}&baths=${baths}&sqfeet=${sqfeet}`;
+            });
     </script>
 </body>
 </html>
