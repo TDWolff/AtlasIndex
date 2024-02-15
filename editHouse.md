@@ -63,7 +63,7 @@ title: Edit House
         method: 'DELETE',
         //mode: 'no-cors',
         cache: 'default',
-        credentials: 'include',
+        
         headers: {
           'Content-Type': 'application/json'
         },
@@ -110,7 +110,7 @@ title: Edit House
         method: 'PUT',
         //mode: 'cors',
         cache: 'no-cache',
-        credentials: 'include',
+        
         headers: {
           'Content-Type': 'application/json'
         },

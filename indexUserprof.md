@@ -59,7 +59,7 @@ title: Profile
         method: 'DELETE',
         //mode: 'no-cors',
         cache: 'default',
-        credentials: 'include',
+        
         headers: {
           'Content-Type': 'application/json'
         },
@@ -93,7 +93,7 @@ title: Profile
         method: 'PUT',
         //mode: 'cors',
         cache: 'no-cache',
-        credentials: 'include',
+        
         headers: {
           'Content-Type': 'application/json'
         },
