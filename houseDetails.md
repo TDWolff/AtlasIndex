@@ -35,7 +35,7 @@ permalink: /house-details
       }
   </style>
 </head>
-<!-- <body>
+ <body>
     <header class="site-header">
       <div id="header">
         <nav class="navbarclass">
@@ -47,17 +47,14 @@ permalink: /house-details
             <li class="title"><a href="{{site.baseurl}}/profile">Profile</a></li>
             <li class="title"><a href="{{site.baseurl}}/help">Help</a></li>
             <li class="title"><a href="{{site.baseurl}}/house">Houses</a></li>
-            <li class="title"><a href="{{site.baseurl}}/signin">Sign In</a></li>
             <li class="title"><a href="{{site.baseurl}}/logout">Logout</a></li>
-            <li class="title"><a href="{{site.baseurl}}/signup">Sign Up</a></li>
             <li class="title"><a href="{{site.baseurl}}/display">Users</a></li>
           </ul>
         </nav>
         <div class="square"></div>
-      </div><!-- end header -->
+      </div>
     </header>
-</body> -->
-<!-- <p style="text-align:left; font-family: Arial">NART Movies</p> -->
+</body>
 
 <style>
         .darkmode {
