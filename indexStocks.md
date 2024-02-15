@@ -5,6 +5,7 @@ title: Display Stocks
 <html>
     <h3 id= "Balance"></h3>
     <a href="/AtlasIndex/transactionlog">Transaction Log</a>
+    <a href="/AtlasIndex/portfolio">Portfolio</a>
     <head>
     <style>
             .darkmode {
