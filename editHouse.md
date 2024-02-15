@@ -36,7 +36,9 @@ title: Edit House
     <label for="beds">Beds:</label><br>
     <input type="text" id="beds" name="beds"><br>
     <label for="baths">Baths:</label><br>
-    <input type="text" id="baths" name="baths"><br><br>
+    <input type="text" id="baths" name="baths"><br>
+    <label for="sqfeet">Square Feet:</label><br>
+    <input type="text" id="sqfeet" name="sqfeet"><br>
     <button type="button" id="editButton">Update</button>
   </form>
   <div id="result"></div>
