@@ -48,7 +48,7 @@ permalink: /portfolio
 
         document.addEventListener("DOMContentLoaded", function () {
             function fetchData() {
-                var url = 'http://localhost:8086/api/stocks/portfolio';
+                var url = 'https://atlas.stu.nighthawkcodingsociety.com/api/stocks/portfolio';
                 const uid = localStorage.getItem("uid");
                 var data = {
                     uid: uid
