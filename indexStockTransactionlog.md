@@ -48,7 +48,7 @@ permalink: /transactionlog
     }
     document.addEventListener("DOMContentLoaded", function () {
         function fetchData() {
-            var url = 'https://atlas.stu.nighthawkcodingsociety.com/api/stocks/transaction/display'
+            var url = 'http://localhost:8086/api/stocks/transaction/display'
             const uid = localStorage.getItem("uid");
             var data = {
                 uid: uid

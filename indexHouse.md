@@ -57,7 +57,7 @@ permalink: /house
                 const resultContainer = document.getElementById("result");
                 resultContainer.innerHTML = ""
             const distance = document.getElementById('distance').value;
-            const url = `https://atlas.stu.nighthawkcodingsociety.com/api/house/?address=${encodeURIComponent(address)}&distance=${encodeURIComponent(distance)}&type=${encodeURIComponent("1")}`;
+            const url = `http://localhost:8086/api/house/?address=${encodeURIComponent(address)}&distance=${encodeURIComponent(distance)}&type=${encodeURIComponent("1")}`;
           const requestOptions = {
               method: 'GET',
               //mode: 'no-cors',

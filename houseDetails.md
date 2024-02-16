@@ -113,7 +113,7 @@ permalink: /house-details
         const distance = document.getElementById('distance').value;
         var title = 'Houses Within ' + distance + ' Miles';
         document.getElementById('houseHeader').textContent = title;
-        const url = `https://atlas.stu.nighthawkcodingsociety.com/api/house/?address=${encodeURIComponent(address)}&distance=${encodeURIComponent(distance)}&type=${encodeURIComponent("1")}`;
+        const url = `http://localhost:8086/api/house/?address=${encodeURIComponent(address)}&distance=${encodeURIComponent(distance)}&type=${encodeURIComponent("1")}`;
       const requestOptions = {
           method: 'GET',
           //mode: 'no-cors',
@@ -148,7 +148,7 @@ permalink: /house-details
         function fetchHouseDetails() {
             const params = new URLSearchParams(window.location.search)
             // Replace with your API endpoint
-            var url = `https://atlas.stu.nighthawkcodingsociety.com/api/house/?address=${encodeURIComponent(params.get('address'))}&type=${encodeURIComponent("2")}`
+            var url = `http://localhost:8086/api/house/?address=${encodeURIComponent(params.get('address'))}&type=${encodeURIComponent("2")}`
             const requestOptions = {
               method: 'GET',
               //mode: 'no-cors',
@@ -170,7 +170,7 @@ permalink: /house-details
                 const resultContainer = document.getElementById("result");
                 resultContainer.innerHTML = ""
             const distance = "3";
-             url = `https://atlas.stu.nighthawkcodingsociety.com/api/house/?address=${encodeURIComponent(params.get('address'))}&distance=${encodeURIComponent(distance)}&type=${encodeURIComponent("1")}`;
+             url = `http://localhost:8086/api/house/?address=${encodeURIComponent(params.get('address'))}&distance=${encodeURIComponent(distance)}&type=${encodeURIComponent("1")}`;
                 fetch(url, requestOptions)
                   .then(response => response.json())
                   .then(data => {

@@ -25,7 +25,7 @@ title: Sign Up
 
 <script>
     // const src="{% raw %}{{site.baseurl}}{% endraw %}";
-    const url = 'https://atlas.stu.nighthawkcodingsociety.com/api/users/'
+    const url = 'http://localhost:8086/api/users/'
     
     window.login_user = function(){
         var uid = document.getElementById('uid').value;

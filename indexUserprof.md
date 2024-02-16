@@ -46,8 +46,8 @@ title: Profile
   
   <script>
     document.getElementById('deleteButton').addEventListener('click', function () {
-      var url = 'https://atlas.stu.nighthawkcodingsociety.com/api/users/';
-      var authUrl = 'https://atlas.stu.nighthawkcodingsociety.com/api/users/authenticate';
+      var url = 'http://localhost:8086/api/users/';
+      var authUrl = 'http://localhost:8086/api/users/authenticate';
       var authBody = window.localStorage.getItem('userBody');
       var uid = document.getElementById('uid').value;
       var password = document.getElementById('password').value;
@@ -74,8 +74,8 @@ title: Profile
         });
     });
     document.getElementById('editButton').addEventListener('click', function () {
-      var url = 'https://atlas.stu.nighthawkcodingsociety.com/api/users/';
-      var authUrl = 'https://atlas.stu.nighthawkcodingsociety.com/api/users/authenticate';
+      var url = 'http://localhost:8086/api/users/';
+      var authUrl = 'http://localhost:8086/api/users/authenticate';
       var authBody = window.localStorage.getItem('userBody');
       var uid = document.getElementById('editUid').value;
       var pnum = document.getElementById('editPnum').value;

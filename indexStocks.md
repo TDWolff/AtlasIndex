@@ -59,7 +59,7 @@ title: Display Stocks
                 // Function to make API call and update the table
                 function fetchData() {
                     // Replace 'your-api-endpoint' with the actual API endpoint
-                    fetch('https://atlas.stu.nighthawkcodingsociety.com/api/stocks/stock/display')
+                    fetch('http://localhost:8086/api/stocks/stock/display')
                         .then(response => response.json())
                         .then(data => {
                             updateTable(data);
@@ -96,7 +96,7 @@ title: Display Stocks
                 if (quantityToBuy !== null && !isNaN(quantityToBuy) && quantityToBuy > 0) {
                     if (quantityToBuy <= availableQuantity) {
                         alert(`Buying ${quantityToBuy} stocks of ${symbol}`);
-                        var url = 'https://atlas.stu.nighthawkcodingsociety.com/api/stocks/transaction'
+                        var url = 'http://localhost:8086/api/stocks/transaction'
                         const newQuantity = availableQuantity - quantityToBuy;
                         const uid = localStorage.getItem("uid");
                         var data = {
@@ -148,7 +148,7 @@ title: Display Stocks
                         cache: 'no-cache',
                         credentials: 'include'
                     };
-                    var url = 'https://atlas.stu.nighthawkcodingsociety.com/api/stocks/stockmoney';
+                    var url = 'http://localhost:8086/api/stocks/stockmoney';
                     fetch(url, authOptions1)
                         .then(response => response.json())
                         .then(data => {

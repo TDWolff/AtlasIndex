@@ -55,7 +55,7 @@ title: Search
         document.getElementById('stock-search-form').addEventListener('submit', function(event) {
             event.preventDefault();
             var symbol = document.getElementById('symbol').value;
-            fetch('https://atlas.stu.nighthawkcodingsociety.com/api/stock/search', {
+            fetch('http://localhost:8086/api/stock/search', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -83,7 +83,7 @@ title: Search
                     <p><strong>Price Avg 50:</strong> ${data.priceAvg50}</p>
                     <p><strong>Price Avg 200:</strong> ${data.priceAvg200}</p>
                 `;
-                fetch('https://atlas.stu.nighthawkcodingsociety.com/api/stock/historical', {
+                fetch('http://localhost:8086/api/stock/historical', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
