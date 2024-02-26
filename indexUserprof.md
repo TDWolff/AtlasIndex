@@ -53,7 +53,8 @@ title: Profile
       var password = document.getElementById('password').value;
       var body = {
         uid: uid,
-        password: password
+        password: password,
+        usr: localStorage.getItem('uid')
       };
       var options = {
         method: 'DELETE',
@@ -87,7 +88,8 @@ title: Profile
             pnum = pnum.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3');
       var body = {
         uid: uid,
-        pnum: pnum
+        pnum: pnum,
+        usr: localStorage.getItem('uid')
       };
       var options = {
         method: 'PUT',
