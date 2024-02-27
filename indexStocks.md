@@ -78,8 +78,13 @@ title: Display Stocks
                             <td>${stock.quantity}</td>
                             <td>${stock.sheesh}</td>
                             <td><button class="buy-button" onclick="buyStock('${stock.sym}')">Buy</button></td>
+                            <td><button class="sell-button" onclick="sellStock('${stock.sym}')">Sell</button></td>
                         `;
                         tableBody.appendChild(row);
+                        const sellButton = row.querySelector('.sell-button')
+                        sellButton.addEventListener('click', function(){
+                            sellStock(stock.symbol,stock.quantity);
+                        })
                         const buyButton = row.querySelector('.buy-button');
                         buyButton.addEventListener('click', function () {
                             buyStock(stock.symbol,stock.quantity);
@@ -132,6 +137,45 @@ title: Display Stocks
                     }
                 } else {
                     alert('Buy operation canceled or invalid quantity entered.');
+                }
+            }
+            function sellStock(symbol, quantity) {
+                console.log(`Selling stock with symbol: ${symbol}`);
+                const quantityToSell = prompt(`How many stocks of ${symbol} do you wish to sell?`, '1');
+                const ownedQuantity = quantity; // Assuming quantity is the available quantity owned by the user
+                if (quantityToSell !== null && !isNaN(quantityToSell) && quantityToSell > 0 && quantityToSell <= ownedQuantity) {
+                    alert(`Selling ${quantityToSell} stocks of ${symbol}`);
+                    var url = 'http://localhost:8086/api/stocks/sell';
+                    const uid = localStorage.getItem("uid");
+                    var data = {
+                        quantity: Number(quantityToSell),
+                        symbol: symbol,
+                        uid: uid,
+                    };
+                    var json = JSON.stringify(data);
+                    const authOptions = {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: json,
+                        credentials: 'include'
+                    };
+                    fetch(url, authOptions)
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error(`HTTP error! Status: ${response.status}`);
+                            }
+                            return response.json();
+                        })
+                        .then(data => {
+                            console.log('success', data);
+                            fetchData();  // Refresh the data after a successful sell
+                            Balance();    // Update balance after a successful sell
+                        })
+                        .catch(error => {
+                            console.error('error', error);
+                        });
+                } else {
+                    alert('Sell operation canceled or invalid quantity entered.');
                 }
             }
                 function Balance() {

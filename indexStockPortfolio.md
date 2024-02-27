@@ -2,6 +2,8 @@
 permalink: /portfolio
 ---
 <html>
+<a href="/AtlasIndex/stocks/">Back</a>
+<a href="/AtlasIndex/transactionlog">Transaction Log</a>
 <head>
     <style>
         .darkmode {
@@ -17,6 +19,10 @@ permalink: /portfolio
     <link id="theme-style" rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body class="lightmode">
+    <h1>User Money Over Transactions Graph</h1>
+    <div id="result">
+        <canvas id="stockChart"></canvas>
+    </div>
     <table id="stockTable">
         <thead>
             <tr>
@@ -45,7 +51,6 @@ permalink: /portfolio
                 body.classList.add('lightmode');
             }
         }
-
         document.addEventListener("DOMContentLoaded", function () {
             function fetchData() {
                 var url = 'http://localhost:8086/api/stocks/portfolio';
@@ -60,7 +65,6 @@ permalink: /portfolio
                     body: json,
                     credentials: 'include'
                 };
-
                 fetch(url, authOptions)
                     .then(response => response.json())
                     .then(data => {
@@ -68,7 +72,6 @@ permalink: /portfolio
                     })
                     .catch(error => console.error('Error fetching data:', error));
             }
-
             // Function to update the table with data
             function updateTable(data) {
                 const tableBody = document.querySelector('#stockTable tbody');
@@ -83,10 +86,31 @@ permalink: /portfolio
                     tableBody.appendChild(row);
                 });
             }
-
             // Call fetchData when the page loads
             fetchData();
         });
+    </script>
+    <script>
+        function graph(){
+            const uid = localStorage.getItem("uid");
+            fetch('http://localhost:8086/api/stocks/graph', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ uid: uid })
+            })
+            .then(response => response.json())
+            .then(data => {
+                var img = document.createElement('img');
+                img.src = 'data:image/png;base64,' + data.image;
+                document.getElementById('result').appendChild(img);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+        graph()
     </script>
 </body>
 </html>

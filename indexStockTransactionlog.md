@@ -2,6 +2,8 @@
 permalink: /transactionlog
 ---
 <html>
+    <a href="/AtlasIndex/stocks/">Back</a>
+    <a href="/AtlasIndex/portfolio">Portfolio</a>
     <head>
     <style>
             .darkmode {
