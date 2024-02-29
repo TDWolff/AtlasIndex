@@ -50,7 +50,7 @@ title: Edit House
   
   <script>
     document.getElementById('deleteButton').addEventListener('click', function () {
-      var url = `http://localhost:8086/api/house/`
+      var url = `https://atlas.stu.nighthawkcodingsociety.com/api/house/`
       var authBody = window.localStorage.getItem('userBody');
       const params = new URLSearchParams(window.location.search)
       var address = params.get("address")
@@ -78,7 +78,7 @@ title: Edit House
         });
     });
     document.getElementById('editButton').addEventListener('click', function () {
-        var url = `http://localhost:8086/api/house/`
+        var url = `https://atlas.stu.nighthawkcodingsociety.com/api/house/`
         var authBody = window.localStorage.getItem('userBody');
         const params = new URLSearchParams(window.location.search)
         var address = params.get("address")
