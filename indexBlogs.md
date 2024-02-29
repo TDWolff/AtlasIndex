@@ -141,7 +141,6 @@ title: Search
         var quantity = document.getElementById('quantity').value;
         var sheesh = document.getElementById('sheesh').value;
         fetch('https://atlas.stu.nighthawkcodingsociety.com/api/stock/missingstock', {
-            // mode: 'no-cors',
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
