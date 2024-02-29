@@ -34,6 +34,19 @@ title: Search
     <div id="result">
      <canvas id="stockChart"></canvas>
      </div>
+     <h1>Add Missing Stock</h1>
+    <form id="missing-stock-form">
+        <label for="missing-symbol">Stock Symbol:</label>
+        <input type="text" id="missing-symbol" name="symbol" required>
+        <label for="company">Company:</label>
+        <input type="text" id="company" name="company" required>
+        <label for="price">Current Price:</label>
+        <input type="number" id="sheesh" name="sheesh" required>
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" required>
+        <button type="submit">Add</button>
+    </form>
+    <div id="add-result"></div>
     <script>
         var apiKey = '952JTDYTX4N1JYCR'; // Replace with your Alpha Vantage API key
         $("#symbol").autocomplete({
@@ -121,6 +134,28 @@ title: Search
             body.classList.add('lightmode');
         }
     }
+    document.getElementById('missing-stock-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        var symbol = document.getElementById('missing-symbol').value;
+        var company = document.getElementById('company').value;
+        var quantity = document.getElementById('quantity').value;
+        var sheesh = document.getElementById('sheesh').value;
+        fetch('http://localhost:8086/api/stock/missingstock', {
+            // mode: 'no-cors',
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({symbol: symbol, company: company, quantity: quantity, sheesh: sheesh})
+        })
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('add-result').innerText = JSON.stringify(data, null, 2);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    });
 </script>
 </body>
 </html>
