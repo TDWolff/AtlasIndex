@@ -21,7 +21,7 @@ title: Buy Atlas Crypto
         <script>
             // import { uri, options } from '/static/js/api/config.js';
             function crypto_options(){
-                const authurl = 'http://127.0.0.1:8086/api/crypto/transactions';
+                const authurl = 'https://atlas.stu.nighthawkcodingsociety.com/api/crypto/transactions';
                 uid = localStorage.getItem("uid");
                 const body = {
                     uid: uid,
@@ -45,7 +45,7 @@ title: Buy Atlas Crypto
                      //alert("Transaction Details");
             }
             function fetchData() {
-                var url = 'http://127.0.0.1:8086/api/crypto/displaytransactions'
+                var url = 'https://atlas.stu.nighthawkcodingsociety.com/api/crypto/displaytransactions'
                 const uid = localStorage.getItem("uid");
                 var data = {
                     uid: uid
@@ -104,7 +104,7 @@ title: Buy Atlas Crypto
             const body = {
             type: "current_price"
             };  
-            const url = 'http://127.0.0.1:8086/api/crypto/transactions';
+            const url = 'https://atlas.stu.nighthawkcodingsociety.com/api/crypto/transactions';
             fetch(url, {
                     method: 'GET',
                     headers: { 'Content-Type': 'application/json' },
