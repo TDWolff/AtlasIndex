@@ -53,7 +53,7 @@ permalink: /portfolio
         }
         document.addEventListener("DOMContentLoaded", function () {
             function fetchData() {
-                var url = 'http://localhost:8086/api/stocks/portfolio';
+                var url = 'https://atlas.stu.nighthawkcodingsociety.com/api/stocks/portfolio';
                 const uid = localStorage.getItem("uid");
                 var data = {
                     uid: uid
@@ -93,7 +93,7 @@ permalink: /portfolio
     <script>
         function graph(){
             const uid = localStorage.getItem("uid");
-            fetch('http://localhost:8086/api/stocks/graph', {
+            fetch('https://atlas.stu.nighthawkcodingsociety.com/api/stocks/graph', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

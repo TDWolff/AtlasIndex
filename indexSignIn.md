@@ -21,7 +21,7 @@ title: Sign In
         <script>
             // import { uri, options } from '/static/js/api/config.js';
             window.sign_in = function signin(){
-                const authurl = 'http://localhost:8086/api/users/authenticate';
+                const authurl = 'https://atlas.stu.nighthawkcodingsociety.com/api/users/authenticate';
                 const body = {
                     name: document.getElementById('name').value,
                     uid: document.getElementById('uid').value,

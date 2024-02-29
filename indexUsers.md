@@ -37,8 +37,8 @@ title: Display Users
         <!-- <script type="module" src="/static/js/api/config.js"></script> -->
         <script>
           // import { uri } from '/static/js/api/config.js';
-          const url = 'http://localhost:8086/api/users/';
-          const authurl = 'http://localhost:8086/api/users/authenticate';
+          const url = 'https://atlas.stu.nighthawkcodingsociety.com/api/users/';
+          const authurl = 'https://atlas.stu.nighthawkcodingsociety.com/api/users/authenticate';
           const userAuthBody = window.localStorage.getItem('userBody')
           // prepare HTML result container for new output
           const resultContainer = document.getElementById("result");
