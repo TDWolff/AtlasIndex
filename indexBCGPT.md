@@ -58,7 +58,7 @@ title: BERT
         <input type="text" id="message" placeholder="Type your message here" style="width:90%;" autocomplete="off">
         <button type="submit">Send</button>
     </div>
-    <button id="upload-button">Upload Image</button>
+    <label for="image" id="upload-button">Upload Image</label>
     <input type="file" id="image" name="image" accept="image/*" style="display: none;">
     <script>
         const messageBody = document.getElementById('messagebody');
@@ -89,18 +89,36 @@ title: BERT
                 div.appendChild(modelText);
             });
         });
-        document.addEventListener('DOMContentLoaded', (event) => {
-            document.getElementById('image').addEventListener('change', function() {
-                var formData = new FormData();
-                formData.append('image', this.files[0]);
-                fetch('http://127.0.0.1:8086/api/bert/genimage', {
-                    method: 'POST',
-                    body: formData
-                })
-                .then(response => response.text())
-                .then(result => console.log(result))
-                .catch(error => console.error(error));
-            });
+        document.getElementById('image').addEventListener('change', function() {
+            var formData = new FormData();
+            var file = this.files[0];
+            formData.append('image', file);
+            fetch('http://127.0.0.1:8086/api/bert/genimage', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(result => {
+                console.log(result);
+                // Parse the result to get the response
+                var parsedResult = JSON.parse(result);
+                var response = parsedResult.response;
+                // Create an img element and set its source to the uploaded image
+                var img = document.createElement('img');
+                img.src = URL.createObjectURL(file);
+                img.height = 200; // adjust the height as needed
+                img.width = 200; // adjust the width as needed
+                img.onload = function() {
+                    URL.revokeObjectURL(this.src);
+                }
+                chat.appendChild(img);
+                // Create a div element and set its text to the model's response
+                var div = document.createElement('div');
+                var modelText = document.createTextNode('Model: ' + response);
+                div.appendChild(modelText);
+                chat.appendChild(div);
+            })
+            .catch(error => console.error(error));
         });
     </script>
     <script>
